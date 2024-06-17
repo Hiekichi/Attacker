@@ -271,14 +271,14 @@ class App():
             ### 敵物体との当たり判定
             if beam.is_alive:
                 for missile in missiles:
-                    if missile.x-beam.x < 5 and abs(missile.y+4-beam.y) < 4:
+                    if abs(missile.x-beam.x) < 5 and abs(missile.y+4-beam.y) < 4:
                         missile.is_alive = False
                         beam.is_alive = False
                         pyxel.play(2,2)
                         break
             if beam.is_alive:
                 for fuel in fuels:
-                    if fuel.x-beam.x < 5 and abs(fuel.y+4-beam.y) < 5:
+                    if abs(fuel.x-beam.x) < 5 and abs(fuel.y+4-beam.y) < 5:
                         self.fuelvalue = min(self.fuelvalue+400,2500)
                         fuel.is_alive = False
                         beam.is_alive = False
@@ -286,7 +286,7 @@ class App():
                         break
             if beam.is_alive:
                 for base in bases:
-                    if base.x-beam.x < 5 and abs(base.y+4-beam.y) < 5:
+                    if abs(base.x-beam.x) < 5 and abs(base.y+4-beam.y) < 5:
                         base.is_alive = False
                         beam.is_alive = False
                         pyxel.play(2,2)
@@ -312,7 +312,7 @@ class App():
                         break
             if bomb.is_alive:
                 for fuel in fuels:
-                    if abs(fuel.x-bomb.x+2) < 7 and fuel.y-bomb.y < 8:
+                    if abs(fuel.x-bomb.x+2) < 7 and abs(fuel.y-bomb.y) < 8:
                         self.fuelvalue = min(self.fuelvalue+400,2500)
                         fuel.is_alive = False
                         bomb.is_alive = False
@@ -320,7 +320,7 @@ class App():
                         break
             if bomb.is_alive:
                 for base in bases:
-                    if abs(base.x-bomb.x+2) < 7 and base.y-bomb.y < 8:
+                    if abs(base.x-bomb.x+2) < 7 and abs(base.y-bomb.y) < 8:
                         base.is_alive = False
                         bomb.is_alive = False
                         pyxel.play(2,2)
