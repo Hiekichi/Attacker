@@ -1,5 +1,6 @@
 # Attacker
 Scramble GAME
+120 dots * 120 dots RETRO Game
 
 ## 概要
 - プログラミング学習用に作成した緊急発進的なゲームのオマージュです。
